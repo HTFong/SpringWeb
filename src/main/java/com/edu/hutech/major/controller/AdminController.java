@@ -10,10 +10,7 @@ import com.edu.hutech.major.service.CategoryService;
 import com.edu.hutech.major.service.ProductService;
 import com.edu.hutech.major.service.RoleService;
 import com.edu.hutech.major.service.UserService;
-import com.edu.hutech.major.service.impl.CategoryServiceImpl;
-import com.edu.hutech.major.service.impl.ProductServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -55,7 +52,7 @@ public class AdminController {
     @GetMapping("/admin/users")
     public String getAcc(Model model){
         model.addAttribute("users", userService.getAllUser());
-        model.addAttribute("roles", roleService.getAllRole());
+        //model.addAttribute("roles", roleService.getAllRole());
         return "users";
     }
     @GetMapping("/admin/users/add")

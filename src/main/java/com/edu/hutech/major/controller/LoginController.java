@@ -1,5 +1,6 @@
 package com.edu.hutech.major.controller;
 
+import com.edu.hutech.major.dto.UserDTO;
 import com.edu.hutech.major.global.GlobalData;
 import com.edu.hutech.major.model.Role;
 import com.edu.hutech.major.model.User;
@@ -35,6 +36,12 @@ public class LoginController {
         GlobalData.cart.clear();
         return "login";
     }//page login
+
+    @GetMapping("/forgotpassword")
+    public String forgotPass(Model model){
+        model.addAttribute("userDTO", new UserDTO());
+        return "forgotpassword";
+    }
 
     @GetMapping("/register")
     public String registerGet(Model model){
